@@ -9,6 +9,6 @@ import java.util.List;
 @NoArgsConstructor
 @Builder(builderMethodName = "BlobNameBuilder")
 @EqualsAndHashCode(callSuper = false)
-public class BlobNameResponse extends FileUploadResponse {
-    private List<String> blobNames;
+public class BlobInfoResponse extends FileUploadResponse {
+    private List<BlobInfo> blobs;
 }
