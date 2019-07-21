@@ -15,8 +15,9 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.ByteArrayOutputStream;
 import java.util.List;
 
-@CrossOrigin("http://localhost:4200")
+@CrossOrigin("*")
 @RestController
+@RequestMapping("/api")
 public class FileController {
 
     @Autowired

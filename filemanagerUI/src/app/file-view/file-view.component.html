@@ -1,0 +1,28 @@
+<div *ngIf='collectionSize>0' class="d-flex p-3 flex-column">
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">File Name</th>
+    <th scope="col">Size</th>
+    <th scope="col">Last Update Date</th>
+    <th scope="col">Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let blob of blobs | paginate: config">
+    <td><a [routerLink]="" (click)="onSelect(blob)">{{blob.blobName }}</a> </td>
+    <td>{{blob.size}}</td>
+    <td>{{blob.updatedDateTime}}</td>
+    <td>
+      <button class="btn btn-default"  type="button" (click)="deleteFieldValue(blob)">Delete</button>
+    </td> 
+   </tr>
+  </tbody>
+</table>
+<div class="d-flex justify-content-center align-items-center container">
+<pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+</div>
+<div *ngIf="fileDownloadInProgress">
+  <h5>{{fileDownloadStatus}}</h5>
+</div>
+</div>
